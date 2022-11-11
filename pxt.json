@@ -6,6 +6,7 @@
         "device": "*"
     },
     "files": [
+        "README.md",
         "skillmap.md",
         "tutorials/activity1.md",
     ],
