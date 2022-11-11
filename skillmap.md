@@ -14,4 +14,4 @@
 * description: Intro to our tutorial cards
 * tags: easy
 
-* url: https://github.com/KirstyWiv/makecode_skillsmap_test/tutorials/activity1 
+* url: https://github.com/KirstyWiv/makecode_skillsmap_test/tutorials/activity1.md
