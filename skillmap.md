@@ -15,7 +15,6 @@
 * next: mova-activity1
 
 * url: https://github.com/KirstyWiv/makecode_skillsmap_test/tutorials/activity1
-* imageUrl: https://raw.githubusercontent.com/microsoft/pxt-skillmap-sample/main/img/space/activity1.png
 
 ### mova-activity1
 
