@@ -23,6 +23,3 @@
 * description: activitiy 2
 * tags: easy
 
-<!-- * url: https://github.com/KirstyWiv/makecode_skillsmap_test/tutorials/activity2 -->
-<!-- * imageUrl: https://raw.githubusercontent.com/microsoft/pxt-skillmap-sample/main/img/space/activity2.png -->
-
