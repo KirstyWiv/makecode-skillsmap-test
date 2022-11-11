@@ -1,5 +1,5 @@
 {
-    "name": "skillmap_test",
+    "name": "makecode_skillsmap_test",
     "version": "0.0.1",
     "description": "",
     "dependencies": {
@@ -8,6 +8,7 @@
     "files": [
         "README.md",
         "skillmap.md",
+        "skillmap2.md",
         "tutorials/activity1.md",
     ],
     "testFiles": [
