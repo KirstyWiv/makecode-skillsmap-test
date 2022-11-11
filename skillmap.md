@@ -16,7 +16,7 @@
 
 * url: https://github.com/KirstyWiv/makecode_skillsmap_test/tutorials/activity1
 
-### mova-activity1
+### mova-activity2
 
 * name: test2
 * type: tutorial
