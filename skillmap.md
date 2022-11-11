@@ -5,6 +5,7 @@
 ## interface
 * name: Learn to use MakeCode Arcade
 * description: This will teach you how to complete tutorials in Microsoft MakeCode Arcade.
+* completionUrl: https://microsoft.github.io/pxt-skillmap-sample/certificates/understanding-arcade-tutorials.pdf
 
 ### interface-activity1
 
@@ -13,5 +14,5 @@
 * description: Intro to our tutorial cards
 * tags: easy
 
-* url: https://github.com/KirstyWiv/makecode_skillsmap_test/tutorials/activity1 
+* url: https://github.com/microsoft/pxt-skillmap-sample/tutorials/interface/activity1 
 * imageUrl: https://raw.githubusercontent.com/microsoft/pxt-skillmap-sample/main/img/interface/activity1.png
