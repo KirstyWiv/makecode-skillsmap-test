@@ -1,0 +1,81 @@
+namespace SpriteKind {
+    export const invis = SpriteKind.create()
+    export const Van = SpriteKind.create()
+}
+scene.onOverlapTile(SpriteKind.Van, assets.tile`ash`, function (sprite, location) {
+    // When the LIDAR van drives over an ash square and makes a measurement, we need to record  whether its high or low ash levels in that square. We can do this by keeping count of each, and adding to the high or low count. when we make a measurement. 
+    // 
+    // Try to add a code block to each part of this if statement to add 1 to either "number_high_concentration"
+    if (Math.percentChance(30)) {
+        tiles.setTileAt(location, assets.tile`heavy_ash`)
+    } else {
+        tiles.setTileAt(location, assets.tile`light_ash`)
+    }
+    info.changeScoreBy(-1)
+})
+scene.onOverlapTile(SpriteKind.Van, assets.tile`data_receiver`, function (sprite, location) {
+    let number_low_ash_level = 0
+    let number_high_ash_level = 0
+    if (info.score() != 0) {
+        game.showLongText("Wer need more data. Currently we have " + convertToText(number_high_ash_level) + "high ash  measurements and " + convertToText(number_low_ash_level) + "low ash measurements out of " + convertToText(number_high_ash_level + number_low_ash_level) + "total measurments.", DialogLayout.Bottom)
+        last_score_message = info.score()
+    } else {
+        // we need to add logic to calculate the concentration.
+        high_ash_levels_fraction = Math.round(number_high_ash_level / (number_high_ash_level + number_low_ash_level) * 100)
+        // we need to calculate  what the number of high concentration cells actualy is, put in a message and then put in to the game end conditional statement
+        game.showLongText("Your data shows ash levels are " + convertToText(high_ash_levels_fraction) + ("%. For levels above " + convertToText(ash_decision_threshold) + "% we recommend closing the airport."), DialogLayout.Center)
+        // This IF block and the IF blocks inside it don't  seem to have the right messages for the end of the game as to whether the players has made the right decision fabout closing the airport or keeping it open based on the data they collected. Can you put the right messages into place?
+        // 
+        // You will need to look at the decisions in the if/else blocks to decide. 
+        // 
+        // 
+        if (game.ask("Close the airport?", "Yes (A=OK) No (B=Cancel)")) {
+            if (high_ash_levels_fraction > ash_decision_threshold) {
+                // For example, if the user presses A to close the airports, then the we go to the first nested IF block. Then the decision is whether the ash levels  are higher than the threshold for planes to fly safely.  So in this part of the IF block the user closed the airport and ash levels and ash levels are high, so it is the right decision. Below the block are all the messages that we could use. Can you find which one is right for here?
+                // 
+                // Then try and do this for the other three messages in this end game if/else blocks.
+                game.showLongText("INSERT RESULT MESSAGE HERE", DialogLayout.Bottom)
+                game.reset()
+            } else {
+                game.showLongText("INSERT RESULT MESSAGE HERE", DialogLayout.Bottom)
+                game.reset()
+            }
+        } else {
+            if (high_ash_levels_fraction > ash_decision_threshold) {
+                game.showLongText("INSERT RESULT MESSAGE HERE", DialogLayout.Bottom)
+                game.reset()
+            } else {
+                game.showLongText("INSERT RESULT MESSAGE HERE", DialogLayout.Bottom)
+                game.reset()
+            }
+        }
+    }
+})
+let high_ash_levels_fraction = 0
+let last_score_message = 0
+let ash_decision_threshold = 0
+tiles.setCurrentTilemap(tilemap`level1`)
+let van = sprites.create(img`
+    . . . 2 . . . . . . . . . . . . 
+    . . . 2 . . . . . . . . . . . . 
+    . . . 2 . . . . . . . . . . . . 
+    . . . 2 . . . . . . . . . . . . 
+    . f 1 d 1 f . . . . . . . . . . 
+    . f 1 d 1 f . . . . . . . . . . 
+    . f 1 1 1 f . f f f . 8 8 8 . . 
+    . f f f f f . f 1 f . 8 8 8 8 . 
+    . . f . f . . f d f . 8 8 1 8 8 
+    . f f f f f . f f f . 8 8 1 1 8 
+    8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 
+    4 8 8 8 8 8 8 8 8 8 8 8 8 8 8 5 
+    4 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 
+    . . f f f . . . . . . f f f . . 
+    . . f b f . . . . . . f b f . . 
+    . . f f f . . . . . . f f f . . 
+    `, SpriteKind.Van)
+tiles.placeOnTile(van, tiles.getTileLocation(2, 3))
+info.setScore(tiles.getTilesByType(assets.tile`ash`).length)
+scene.cameraFollowSprite(van)
+controller.moveSprite(van)
+effects.blizzard.startScreenEffect(500000000000000000)
+ash_decision_threshold = 25
