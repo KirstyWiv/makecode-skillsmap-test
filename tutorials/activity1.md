@@ -32,6 +32,8 @@ game.onUpdateInterval(5000, function () {
 
 ## Introduction @unplugged
 
+![Psyched Monkey](/static/skillmap/interface/monkey.png "Psyched Monkey is Ready!" )
+
 **Are you ready to start coding your own games?**
 
 Complete this tutorial to learn how to:
@@ -104,6 +106,9 @@ connected, duplicated, and deleted.
 
 Keep going to learn more about blocks.
 
+![Block Animation](/static/skillmap/interface/use_blocks.gif "Blocks appear, duplicate, and delete." )
+
+
 
 ## Your Toolbox
 
@@ -165,6 +170,8 @@ play around with it until a [__*sprite*__](#sprote "A 2-D image that moves on th
 and drop it back into the toolbox to delete it so your sprite will be revealed!
 
 #### ~ tutorialhint
+
+![Open image editor](/static/skillmap/misc/open-image-editor-small.gif "How to open the image editor." )
 
 ---
 
