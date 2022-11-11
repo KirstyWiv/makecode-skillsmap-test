@@ -14,5 +14,4 @@
 * description: Intro to our tutorial cards
 * tags: easy
 
-* url: https://github.com/microsoft/pxt-skillmap-sample/tutorials/interface/activity1 
-* imageUrl: https://raw.githubusercontent.com/microsoft/pxt-skillmap-sample/main/img/interface/activity1.png
+* url: https://github.com/KirstyWiv/makecode_skillsmap_test/blob/main/tutorials/activity1.md
